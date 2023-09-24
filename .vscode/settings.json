@@ -1,4 +1,10 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive",
-    "java.dependency.packagePresentation": "hierarchical"
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "java.dependency.packagePresentation": "hierarchical",
+  "java.compile.nullAnalysis.mode": "automatic",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
