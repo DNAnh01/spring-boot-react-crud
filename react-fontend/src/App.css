@@ -45,9 +45,5 @@
   height: 50px;
   background-color: white;
   text-align: center;
-  color: white;
-
-  &.text-muted {
-    color: red !important;
-  }
+  color: black;
 }
