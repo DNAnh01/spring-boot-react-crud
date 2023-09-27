@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import EmployeeService from '../sevices/EmployeeService';
+import EmployeeService from '../services/EmployeeService';
 
 const AddEmployeeComponent = () => {
     const [firstName, setFirstName] = useState('');
