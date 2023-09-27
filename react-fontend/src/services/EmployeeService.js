@@ -14,6 +14,10 @@ class EmployeeService {
     getEmployeeById(employeeId) {
         return axios.get(EMPLOYEE_BASE_REST_API_URL + '/' + employeeId);
     }
+
+    updateEmployee(employeeId, employee) {
+        return axios.put(EMPLOYEE_BASE_REST_API_URL + '/' + employeeId, employee);
+    }
 }
 // eslint-disable-next-line import/no-anonymous-default-export
 export default new EmployeeService();

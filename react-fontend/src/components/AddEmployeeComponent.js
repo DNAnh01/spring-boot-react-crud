@@ -10,14 +10,25 @@ const AddEmployeeComponent = () => {
 
     const navigate = useNavigate();
 
-    const saveEmployee = (e) => {
+    const saveOrUpdateEmployee = (e) => {
         e.preventDefault();
         const employee = { firstName, lastName, emailId };
+
+        if (id) {
+            EmployeeService.updateEmployee(id, employee)
+                .then((res) => {
+                    navigate('/employees');
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        } else {
+        }
         EmployeeService.createEmployee(employee)
             .then((res) => {
                 console.log(res.data);
                 // navigate.push('/employees');
-                navigate(-1);
+                navigate('/employees');
             })
             .catch((err) => {
                 console.log(err);
@@ -34,6 +45,7 @@ const AddEmployeeComponent = () => {
             .catch((err) => {
                 console.log(err);
             });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const title = () => {
@@ -90,7 +102,7 @@ const AddEmployeeComponent = () => {
                                     ></input>
                                 </div>
 
-                                <button className="btn btn-success" onClick={(e) => saveEmployee(e)}>
+                                <button className="btn btn-success" onClick={(e) => saveOrUpdateEmployee(e)}>
                                     Submit
                                 </button>
                                 <Link to="/employees" className="btn btn-danger">
