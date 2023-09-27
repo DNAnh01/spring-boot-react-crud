@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import EmployeeSevice from '../sevices/EmployeeSevice';
+import EmployeeService from '../sevices/EmployeeService';
 import { Link } from 'react-router-dom';
 
 const ListEmployeeComponent = () => {
     const [employee, setEmployee] = useState([]);
     useEffect(() => {
-        EmployeeSevice.getAllEmployee()
+        EmployeeService.getAllEmployee()
             .then((res) => {
                 setEmployee(res.data);
             })
