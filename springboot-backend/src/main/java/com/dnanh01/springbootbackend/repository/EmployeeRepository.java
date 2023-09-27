@@ -8,6 +8,4 @@ import com.dnanh01.springbootbackend.model.Employee;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long>{
     // all crud database methods
-
-    
 }

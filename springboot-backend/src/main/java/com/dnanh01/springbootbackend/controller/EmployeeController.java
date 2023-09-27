@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dnanh01.springbootbackend.model.Employee;
 import com.dnanh01.springbootbackend.repository.EmployeeRepository;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/v1/")
 public class EmployeeController {
