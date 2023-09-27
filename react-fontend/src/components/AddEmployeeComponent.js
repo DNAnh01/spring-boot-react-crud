@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import EmployeeService from '../sevices/EmployeeService';
 
 const AddEmployeeComponent = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [emailId, setEmailId] = useState('');
+    const navigate = useNavigate();
 
     const saveEmployee = (e) => {
         e.preventDefault();
         const employee = { firstName, lastName, emailId };
-        console.log(employee);
+        EmployeeService.createEmployee(employee)
+            .then((res) => {
+                console.log(res.data);
+                // navigate.push('/employees');
+                navigate(-1);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     };
     return (
         <div>
@@ -59,6 +70,9 @@ const AddEmployeeComponent = () => {
                                 <button className="btn btn-success" onClick={(e) => saveEmployee(e)}>
                                     Submit
                                 </button>
+                                <Link to="/employees" className="btn btn-danger">
+                                    Cancel
+                                </Link>
                             </form>
                         </div>
                     </div>
